@@ -1,0 +1,35 @@
+<section class="hero is-fullheight is-seagreen">
+  <div class="columns is-centered">
+    <div class="column is-half is-devise">
+      <%= link_to "Outraise", root_path, class: "title is-2 has-text-white has-text-centered align-brand-left is-uppercase" %>
+
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "your@email.com", class: "input" %>
+              </div>
+
+              <div class="field">
+                <%= f.password_field :password, autocomplete: "current-password", placeholder: "your password", class: "input" %>
+              </div>
+
+              <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me, class: "checkbox" %>
+                  <%= f.label :remember_me, class: "checkbox" %>
+                </div>
+              <% end %>
+
+              <div class="actions control">
+                <%= f.submit "Log in", class: "button is-link is-fullwidth" %>
+              </div>
+            <% end %>
+
+            <p class="help"><%= render "devise/shared/links" %></p>
+        </div>
+      </div>
+        <p class="has-text-centered has-text-white"> Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name), class: "is-link has-text-white has-text-underlined" %></p>
+    </div>
+  </div>
+</section>

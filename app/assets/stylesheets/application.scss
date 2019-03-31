@@ -1,0 +1,100 @@
+@import "bulma";
+$isseagreen: #379b56 !important;
+$iswhite: white !important;
+$linkcolor: #25ACFF;
+$hastextlinkcolor: #25ACFF;
+$isgrey: #F4F4F4;
+$fontfamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Application
+body {
+   font-family: $fontfamily;
+}
+
+// Main
+.is-seagreen {
+  background-color: $isseagreen;
+  color: $iswhite;
+}
+
+.is-link-color {
+  background-color: $linkcolor;
+}
+
+.has-textlink-color {
+  color: $hastextlinkcolor;
+}
+
+span.menulinks a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  a:hover {
+    color: #A
+  }
+}
+
+.is-devise {
+  margin-top: 100px;
+}
+
+.align-brand-left {
+  margin-left: 1rem;
+}
+
+.has-text-underlined {
+  text-decoration: underline !important;
+}
+
+// Dashboard
+.is-dashboard-content {
+  background-color: $isgrey;
+}
+
+.is-dashboard-overview {
+  background-color: $iswhite;
+  margin-top: 40px;
+  height: 160px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.16);
+}
+
+.is-new-form-button {
+  margin-top: -7px;
+  font-size: 1rem !important;
+  padding: 1.5rem 3rem;
+  width: 320px;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.16);
+}
+
+.is-contributions-overview {
+  height: 280px;
+  width: 320px;
+  background-color: $iswhite;
+  margin-top: 20px;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.16);
+  p.help {
+    letter-spacing: 1px;
+  }
+}
+
+.level-left.is-dashboard-left {
+    display: block !important;
+}
+
+.heading {
+  text-align: left;
+  font-size: 12px !important;
+}
+
+.is-recent-forms {
+  height: 350px;
+  width: 800px;
+  background-color: $iswhite;
+  margin-top: -10px;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.16);
+  p.help {
+    letter-spacing: 1px;
+  }
+}

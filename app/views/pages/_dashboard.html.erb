@@ -1,0 +1,76 @@
+<!-- Dashboard -->
+<nav class="navbar is-seagreen" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to "Outraise", root_path, class:"navbar-item has-text-weight-bold has-text-white is-uppercase" %>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navhamburger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navhamburger" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"button is-normal has-text-weight-semibold is-inverted is-outlined" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<section class="hero is-fullheight-with-navbar is-dashboard-content">
+  <div class="container">
+    <!-- Dashboard Overview -->
+    <nav class="level is-mobile is-dashboard-overview">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">views</p>
+          <p class="title has-textlink-color">1,841</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Contributions</p>
+          <p class="title has-textlink-color">996</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Conversion</p>
+          <p class="title has-textlink-color">54.1%</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Raised</p>
+          <p class="title has-textlink-color">$12,625.00</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Forms & Contributions Overview -->
+    <nav class="level">
+      <!-- Create New Form Button -->
+      <div class="level-left is-dashboard-left">
+        <%= link_to "Create New Form", root_path, class: "button is-seagreen is-large has-text-weight-semibold is-new-form-button" %>
+
+        <!-- Recent Contributions Listing -->
+        <div class="box is-contributions-overview">
+          <p class="help is-uppercase">Recent Contributions</p>
+        </div>
+
+      </div>
+
+      <!-- Recent Forms Listing -->
+      <div class="level-right is-dashboard-right">
+        <div class="box is-recent-forms">
+          <p class="help is-uppercase">Recent Forms</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>

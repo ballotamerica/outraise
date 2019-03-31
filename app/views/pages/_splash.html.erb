@@ -1,0 +1,41 @@
+<!-- Splash | Pages -->
+<section class="hero is-fullheight">
+  <div class="hero-head">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to "Outraise", root_path, class:"navbar-item has-text-weight-bold is-uppercase" %>
+
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navhamburger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navhamburger" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <span class="menulinks">
+                <%= link_to "About", root_path %>
+                <%= link_to "Features", root_path %>
+                <%= link_to "Pricing", root_path %>
+                <%= link_to "Blog", root_path %>
+                <%= link_to "Login", new_user_session_path %>
+              </span>
+
+              <div class="buttons">
+                <%= link_to "Start Fundraising", new_user_registration_path, class:"button is-normal has-text-weight-semibold is-seagreen" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1 has-text-weight-bold">Welcome to Outraise</h1>
+    </div>
+  </div>
+</section>

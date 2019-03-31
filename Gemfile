@@ -9,6 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'sassc', '~> 2.0', '>= 2.0.1'
 gem 'bulma-rails', '~> 0.7.4'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
+gem 'devise'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
