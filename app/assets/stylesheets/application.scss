@@ -76,6 +76,16 @@ span.menulinks a {
   p.help {
     letter-spacing: 1px;
   }
+  p span {
+    float: right;
+  }
+}
+
+.is-contribution, .is-form {
+  padding-top: 1rem;
+  span {
+    float: right;
+  }
 }
 
 .level-left.is-dashboard-left {

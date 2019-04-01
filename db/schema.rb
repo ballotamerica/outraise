@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_222713) do
+ActiveRecord::Schema.define(version: 2019_04_01_075415) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "one"
@@ -28,10 +28,33 @@ ActiveRecord::Schema.define(version: 2019_03_30_222713) do
     t.integer "user_id"
   end
 
+  create_table "contributions", force: :cascade do |t|
+    t.decimal "amount"
+    t.string "recurring"
+    t.string "token"
+    t.integer "contact_id"
+    t.integer "form_id"
+    t.integer "user_id"
+  end
+
   create_table "emails", force: :cascade do |t|
     t.string "addressType"
     t.string "address"
     t.integer "contact_id"
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "formName"
+    t.text "formBody"
+    t.string "formTitle"
+    t.decimal "amountOne"
+    t.decimal "amountTwo"
+    t.decimal "amountThree"
+    t.decimal "amountFour"
+    t.decimal "amountFive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "notes", force: :cascade do |t|

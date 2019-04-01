@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       sign_up: 'register' ,
       sign_out: 'logout'
     }
+
+  resources :contributions, only: [:index]
+  resources :forms, only: [:index]
 end

@@ -1,0 +1,25 @@
+<nav class="navbar is-seagreen" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to "Outraise", root_path, class:"navbar-item has-text-weight-bold has-text-white is-uppercase" %>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navhamburger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navhamburger" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="menulinks has-text-weight-semibold">
+            <%= link_to "Donors", contributions_path, class:"has-text-white" %>
+            <%= link_to "Forms", forms_path, class:"has-text-white" %>
+            <%= link_to "Account", root_path, class:"has-text-white" %>
+            <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"has-text-white" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
