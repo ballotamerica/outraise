@@ -1,20 +1,53 @@
 @import "bulma";
-$isseagreen: #379b56 !important;
+@import "bulma-extensions";
+@import "megamenu";
+
+$isbablue: #004b8d !important;
 $iswhite: white !important;
+$dashboardbg: #EBEFF4;
 $linkcolor: #25ACFF;
+$isbrilliantgreen: #32d28f;
 $hastextlinkcolor: #25ACFF;
 $isgrey: #F4F4F4;
-$fontfamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$fontfamily: 'Rubik', sans-serif;
 
 // Application
 body {
    font-family: $fontfamily;
+   color: #1A1D21;
+   -webkit-font-smoothing: antialiased;
 }
 
 // Main
-.is-seagreen {
-  background-color: $isseagreen;
+.is-bablue {
+  color: $isbablue;
+}
+
+.has-background-bablue {
+  background-color: $isbablue;
+}
+
+.is-brilliantgreen {
+  background-color: $isbrilliantgreen;
   color: $iswhite;
+  border: none;
+}
+
+.has-text-size-14px {
+  font-size: 14px;
+  color: $isbablue;
+}
+
+.has-decreased-margin {
+  margin-top: -10rem;
+}
+
+.has-bottom-padding {
+  padding-bottom: 1rem;
+}
+
+.is-padded {
+  padding: 1.25rem 2rem;
 }
 
 .is-link-color {
@@ -28,8 +61,9 @@ body {
 span.menulinks a {
   padding-left: 1rem;
   padding-right: 1rem;
+  color: white;
   a:hover {
-    color: #A
+    color: $hastextlinkcolor;
   }
 }
 
@@ -45,9 +79,19 @@ span.menulinks a {
   text-decoration: underline !important;
 }
 
+// Splash
+.splash-hero {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(212, 51%, 54%, 1.00)), to(hsla(210, 60%, 60%, 1.00)));
+  background-image: linear-gradient(180deg, hsla(212, 51%, 54%, 1.00), hsla(210, 60%, 60%, 1.00));
+}
+
+.splash-title {
+  font-size: 60px;
+}
+
 // Dashboard
 .is-dashboard-content {
-  background-color: $isgrey;
+  background-color: $dashboardbg;
 }
 
 .is-dashboard-overview {
@@ -58,6 +102,7 @@ span.menulinks a {
 }
 
 .is-new-form-button {
+  color: $iswhite;
   margin-top: -7px;
   font-size: 1rem !important;
   padding: 1.5rem 3rem;
@@ -83,7 +128,7 @@ span.menulinks a {
 
 .is-contribution, .is-form {
   padding-top: 1rem;
-  span {
+  span.is-form-amount {
     float: right;
   }
 }
@@ -107,4 +152,59 @@ span.menulinks a {
   p.help {
     letter-spacing: 1px;
   }
+}
+
+// Tables
+// Forms Listing
+table.table {
+  margin-top: 40px;
+  margin-left: 80px;
+  width: 1000px;
+}
+
+table.table thead tr th {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 2rem !important;
+}
+
+table.table tbody tr th, tbody tr td {
+    padding: 1rem !important;
+}
+
+// Recent Forms - Dashboard Box
+.forms-box {
+  padding: 0 !important;
+}
+
+.recent-forms-header {
+  padding: 1.25rem;
+}
+
+table.dashboard-table {
+  width: 800px;
+  margin-top: 1rem;
+}
+
+table.dashboard-table thead tr th {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 1rem !important;
+  border-bottom: 1px solid $isgrey;
+  border-width: medium;;
+}
+
+table.dashboard-table tbody tr th, tbody tr td {
+    padding: 1rem !important;
+    border-bottom: 1px solid $isgrey;
+    border-width: medium;;
+}
+
+// Contributors Listing
+table.table thead tr th {
+  padding-left: 1rem !important;
+}
+
+table.contributions-table tbody tr th, tbody tr td {
+    padding: 1rem !important;
 }

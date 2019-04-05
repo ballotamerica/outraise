@@ -1,0 +1,82 @@
+<!-- Donation Step by Step wizard goes here -->
+<div class="container">
+  <div class="wrapper">
+
+    <!-- Steps Header -->
+    <ul class="steps">
+      <li class="is-active">Step 1</li>
+      <li>Step 2</li>
+      <li>Step 3</li>
+    </ul>
+
+    <!-- Donation Form -->
+    <form class="form-wrapper">
+
+      <!-- Step 1 Section | Select Amount Buttons -->
+      <fieldset class="section is-active">
+        <h3>Select Contribution Amount</h3>
+        <div class="row cf">
+          <div class="four col">
+            <input type="radio" name="r1" id="r1" checked>
+            <label for="r1">
+              <h4>Amount One</h4>
+            </label>
+          </div>
+          <div class="four col">
+            <input type="radio" name="r1" id="r2"><label for="r2">
+              <h4>Amount Two</h4>
+            </label>
+          </div>
+          <div class="four col">
+            <input type="radio" name="r1" id="r3"><label for="r3">
+              <h4>Amount Three</h4>
+            </label>
+          </div>
+        </div>
+        <div class="row cf">
+          <div class="four col">
+            <input type="radio" name="r1" id="r1" checked>
+            <label for="r1">
+              <h4>Amount Four</h4>
+            </label>
+          </div>
+          <div class="four col">
+            <input type="radio" name="r1" id="r2"><label for="r2">
+              <h4>Amount Five</h4>
+            </label>
+          </div>
+          <div class="four col">
+            <input type="radio" name="r1" id="r3"><label for="r3">
+              <h4>Amount Six aka Other</h4>
+            </label>
+          </div>
+        </div>
+        <div class="button">Continue</div>
+      </fieldset>
+
+      <!-- Step 2 Section | Input Personal Details -->
+      <fieldset class="section">
+        <h3>Your Details</h3>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="text" name="email" id="email" placeholder="Email">
+        <div class="button">Continue</div>
+      </fieldset>
+
+
+      <!-- Step 3 Section | Input Payment Details -->
+      <fieldset class="section">
+        <h3>Choose a Password</h3>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="password" name="password2" id="password2" placeholder="Re-enter Password">
+        <input class="submit button" type="submit" value="Submit">
+      </fieldset>
+
+      <!-- Confirmation Section | Inform Supporter Contribution Success -->
+      <fieldset class="section">
+        <h3>Account Created!</h3>
+        <p>Your account has now been created.</p>
+        <div class="button">Reset Form</div>
+      </fieldset>
+    </form>
+  </div>
+</div>

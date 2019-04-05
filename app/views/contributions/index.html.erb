@@ -1,1 +1,29 @@
 <%= render partial: "pages/dashboardnav" %>
+
+<!-- Forms Listing -->
+<section class="hero is-fullheight-with-navbar is-dashboard-content">
+  <div class="container">
+    <table class="table contributions-table">
+      <thead>
+        <tr>
+          <th>Contributor Name</th>
+          <th>Amount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @contributions.each do |contribution| %>
+        <tr>
+          <th><%= contribution.contact.firstName.capitalize + " " + contribution.contact.lastName.capitalize %>
+          <% if contribution.contact.suffix != nil %>
+            <%= contribution.contact.suffix %>
+          <% end %> <!-- Suffix end --></th>
+          <td><%= number_to_currency(contribution.amount, precision: 2, strip_insignificant_zeros: true) %></td>
+          <td class="has-text-weight-semibold"><%= link_to "Refund", contributions_path, class:"button is-small is-danger is-rounded" %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

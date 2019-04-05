@@ -4,6 +4,6 @@ module FormHelper
   end
 
   def contribution_sum(form)
-    @forms.sum :amount
+    form.contributions.sum :amount
   end
 end

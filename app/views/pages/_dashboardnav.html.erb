@@ -1,7 +1,7 @@
-<nav class="navbar is-seagreen" role="navigation" aria-label="main navigation">
+<nav class="navbar has-background-bablue" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <%= link_to "Outraise", root_path, class:"navbar-item has-text-weight-bold has-text-white is-uppercase" %>
+      <%= link_to "Outraise", root_path, class:"navbar-item has-text-weight-bold has-text-white is-lowercase" %>
 
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navhamburger">
         <span aria-hidden="true"></span>
@@ -13,11 +13,11 @@
     <div id="navhamburger" class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <span class="menulinks has-text-weight-semibold">
+          <span class="menulinks has-text-weight-semibold is-lowercase">
             <%= link_to "Donors", contributions_path, class:"has-text-white" %>
             <%= link_to "Forms", forms_path, class:"has-text-white" %>
             <%= link_to "Account", root_path, class:"has-text-white" %>
-            <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"has-text-white" %>
+            <%= link_to("Signout", destroy_user_session_path, method: :delete, class:"has-text-white") %>
           </span>
         </div>
       </div>

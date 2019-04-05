@@ -8,6 +8,10 @@ Rails.application.routes.draw do
       sign_out: 'logout'
     }
 
-  resources :contributions, only: [:index]
-  resources :forms, only: [:index]
+  resources :contributions, only: [:index, :destroy]
+  resources :forms
+
+  scope path: "donate", controller: :forms do
+    get '/:slug' => :show
+  end
 end

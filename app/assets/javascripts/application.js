@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+s// This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+//= Navigation | Navbar Hamburger
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
@@ -39,4 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+});
+
+//= Donation Box Wizard
+$(document).ready(function(){
+  $(".form-wrapper .button").click(function(){
+    var button = $(this);
+    var currentSection = button.parents(".section");
+    var currentSectionIndex = currentSection.index();
+    var headerSection = $('.steps li').eq(currentSectionIndex);
+    currentSection.removeClass("is-active").next().addClass("is-active");
+    headerSection.removeClass("is-active").next().addClass("is-active");
+
+    $(".form-wrapper").submit(function(e) {
+      e.preventDefault();
+    });
+
+    if(currentSectionIndex === 3){
+      $(document).find(".form-wrapper .section").first().addClass("is-active");
+      $(document).find(".steps li").first().addClass("is-active");
+    }
+  });
 });

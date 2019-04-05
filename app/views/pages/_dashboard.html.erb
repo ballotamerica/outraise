@@ -7,7 +7,7 @@
       <nav class="level is-mobile is-dashboard-overview">
         <div class="level-item has-text-centered">
           <div>
-            <p class="heading has-text-weight-semibold">views</p>
+            <p class="heading has-text-weight-semibold is-capitalized">views</p>
             <% if count(@contribution) == 0 %>
               <p class="title has-textlink-color">-</p>
             <% else %>
@@ -17,7 +17,7 @@
         </div>
         <div class="level-item has-text-centered">
           <div>
-            <p class="heading has-text-weight-semibold">Contributions</p>
+            <p class="heading has-text-weight-semibold is-capitalized">Contributions</p>
             <% if count(@contribution) == 0 %>
               <p class="title has-textlink-color">-</p>
             <% else %>
@@ -27,7 +27,7 @@
         </div>
         <div class="level-item has-text-centered">
           <div>
-            <p class="heading has-text-weight-semibold">Conversion</p>
+            <p class="heading has-text-weight-semibold is-capitalized">Conversion</p>
             <% if count(@contribution) == 0 %>
               <p class="title has-textlink-color">-</p>
             <% else %>
@@ -37,7 +37,7 @@
         </div>
         <div class="level-item has-text-centered">
           <div>
-            <p class="heading has-text-weight-semibold">Raised</p>
+            <p class="heading has-text-weight-semibold is-capitalized">Raised</p>
             <% if count(@contribution) == 0 %>
               <p class="title has-textlink-color">-</p>
             <% else %>
@@ -51,25 +51,25 @@
       <nav class="level">
         <!-- Create New Form Button -->
         <div class="level-left is-dashboard-left">
-          <%= link_to "Create New Form", root_path, class: "button is-seagreen is-large has-text-weight-semibold is-new-form-button" %>
+          <%= link_to "Create New Form", new_form_path, class: "button has-background-bablue is-large has-text-weight-semibold is-new-form-button" %>
 
           <!-- Recent Contributions Listing -->
           <div class="box is-contributions-overview">
             <p class="help is-uppercase has-text-weight-semibold">Recent Contributions
               <% if @contributions.count != 0 %>
-                <span><%= link_to "View All", contributions_path, class: "has-text-weight-normal has-textlink-color" %></span>
+                <span><%= link_to "View All", contributions_path, class: "has-text-weight-normal has-textlink-color is-capitalized" %></span>
               <% end %>
             </p>
 
               <% if @contributions.limit(6).count != 0 %>
                 <% @contributions.each do |contribution| %>
-                  <p class="help is-contribution">
+                  <p class="help is-contribution has-text-weight-semibold">
                     <%= contribution.contact.firstName.capitalize + " " + contribution.contact.lastName.capitalize %>
                     <% if contribution.contact.suffix != nil %>
                       <%= contribution.contact.suffix %>
                     <% end %> <!-- Suffix end -->
-                    <span class="has-textlink-color has-text-weight-semibold">
-                      <%= number_to_currency(contribution.amount, precision: 2) %>
+                    <span class="has-textlink-color">
+                      <%= number_to_currency(contribution.amount, precision: 2, strip_insignificant_zeros: true) %>
                     </span>
                     </p>
                 <% end %> <!-- Contributions Each end -->
@@ -86,18 +86,29 @@
 
       <!-- Recent Forms Listing -->
       <div class="level-right is-dashboard-right">
-        <div class="box is-recent-forms">
-          <p class="help is-uppercase">Recent Forms</p>
+        <div class="box forms-box is-recent-forms">
+          <p class="help is-uppercase recent-forms-header">Recent Forms</p>
 
           <% if @forms.limit(6).count != 0 %>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th class="has-text-weight-semibold">Form Name</th>
+                <th class="has-text-weight-semibold">Contributions</th>
+                <th class="has-text-weight-semibold">Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
             <% @forms.each do |form| %>
-              <p class="help has-text-weight-semibold is-form">
-                <%= form.formName.capitalize %>
-                <span class="has-textlink-color">
-                  <%#=  number_to_currency(contribution_sum(@form), precision: 2) %>
-                </span>
-                </p>
-            <% end %> <!-- Forms Each end -->
+              <tr>
+                <th class="has-text-weight-normal"><%= form.formName.capitalize %></th>
+                <td><%= form.contributions.count %></td>
+                <td><%= number_to_currency(contribution_sum(form), precision: 2, strip_insignificant_zeros: true) %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
           <% else %>
             <div>
               <p class="help has-text-weight-semibold">
